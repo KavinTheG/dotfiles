@@ -18,6 +18,10 @@ alias l='eza -l' # Long format
 alias la='eza -la' # Long format with all files
 alias lsd='eza --tree' # Tree view
 
+# Edit a hypr config
+hypr() {
+	vim "$HOME/.config/hypr/$1"
+}
 
 # Zoxide
 alias cd='z'
