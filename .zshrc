@@ -13,11 +13,12 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Eza
-alias ls='eza'
-alias l='eza -l' # Long format
-alias la='eza -la' # Long format with all files
-alias lsd='eza --tree' # Tree view
+#alias ls='eza'
+#alias l='eza -l' # Long format
+#alias la='eza -la' # Long format with all files
+#alias lsd='eza --tree' # Tree view
 
+alias ls='lsd'
 # Edit a hypr config
 hypr() {
 	vim "$HOME/.config/hypr/$1"

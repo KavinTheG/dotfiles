@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 34, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -10,12 +10,17 @@
         "hyprland/workspaces",
         "hyprland/submap",
         "sway/scratchpad",
-        "custom/media"
+        "custom/media",
+
     ],
     "modules-center": [
-        "hyprland/window"
+        //"hyprland/window"
+        "custom/browser",
+        "custom/notes",
+        "custom/steam"
     ],
     "modules-right": [
+        "custom/night",
         "custom/earbuds",
         "mpd",
         "idle_inhibitor",
@@ -26,7 +31,6 @@
         "memory",
         "temperature",
         "backlight",
-        "keyboard-state",
         "sway/language",
         "battery",
         "battery#bat2",
@@ -49,16 +53,10 @@
             "urgent": "",
             "focused": "",
             "default": ""
-        }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+        },
+	"persistent-workspaces": {
+		"*": 5
+	},
     },
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
@@ -111,6 +109,10 @@
     "custom/earbuds": {
         "format": "",
         "on-click": "/home/kavin/.config/waybar/scripts/bluetooth_buds.sh"
+    },
+    "custom/night": {
+        "format": "",
+        "on-click": "/home/kavin/.config/waybar/scripts/night_mode.sh"
     },
 
     "clock": {
@@ -207,16 +209,22 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+    "custom/browser": {
+        "format": "",
+        "on-click": "setsid firefox &",
+        "on-click-right": "setsid firefox --private-window &"
+    },
+    "custom/notes": {
+        "format": "",
+        "on-click": "setsid obsidian &"
+    },
+    "custom/steam": {
+        "format": "",
+        "on-click": "setsid steam &"
+    },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+        "format" : "",
+        //"on-click": "/home/kavin/.config/waybar/scripts/launch_wlogout.sh"
+	"on-click": "wlogout -b 4 &"
     }
 }

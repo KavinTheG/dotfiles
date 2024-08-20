@@ -9,12 +9,12 @@ if [ -n "$STATUS" ]; then
     # If the device is connected, disconnect it
     echo "Device is connected, disconnecting..."
     bluetoothctl disconnect $DEVICE
+    echo "disconnected"
 else
     # If the device is not connected, connect it
     echo "Device is not connected, connecting..."
     bluetoothctl connect $DEVICE
-    
-    sleep 5
-    /home/kavin/.config/waybar/scripts/buds_evtest.sh
+    /home/kavin/.config/hypr/scripts/buds_evtest.sh
+    echo "connected"
 fi
 

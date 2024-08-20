@@ -1,0 +1,75 @@
+* {
+	background-image: none; 
+}
+
+window {
+	background-color: rgba(6, 6, 6, 0.1);
+}
+
+
+button {
+    color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 0.7);
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 10s ease-in infinite;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:hover {
+	background-color: rgba(0, 0, 0, 0.35);
+	background-size: 40%;
+	animation: gradient_f 10s ease-in infinite;	
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#lock {
+    border-radius: 40px;
+    margin: 5px 0px 5px 150px;
+}
+
+button:hover#logout {
+    border-radius: 40px;
+    margin: 5px 0px 5px 0px;
+}
+
+button:hover#shutdown {
+    border-radius: 40px;
+    margin: 5px 0px 5px 0px;
+}
+
+button:hover#reboot {
+    border-radius: 40px;
+    margin: 5px 150px 5px 0px;
+}
+
+#lock {
+    background-image: image(url("/home/kavin/.config/wlogout/icons/lock_white.png"));
+    border-radius: 35px 0px 0px 35px;
+    margin: 150px 0px 150px 150px;
+}
+
+#logout {
+    background-image: image(url("/home/kavin/.config/wlogout/icons/logout_white.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 150px 0px 150px 0px;
+}
+
+#shutdown {
+    background-image: image(url("/home/kavin/.config/wlogout/icons/shutdown_white.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 150px 0px 150px 0px;
+}
+
+#reboot {
+    background-image: image(url("/home/kavin/.config/wlogout/icons/reboot_white.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    border-radius: 0px 35px 35px 0px;
+    margin: 150px 150px 150px 0px;
+}
