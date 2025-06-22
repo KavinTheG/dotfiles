@@ -20,8 +20,10 @@
         "custom/steam"
     ],
     "modules-right": [
+	"custom/brightness",
         "custom/night",
         "custom/earbuds",
+        "custom/gamepad",
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
@@ -50,9 +52,6 @@
             "3": "3",
             "4": "4",
             "5": "5",
-            "urgent": "",
-            "focused": "",
-            "default": ""
         },
 	"persistent-workspaces": {
 		"*": 5
@@ -110,8 +109,13 @@
         "format": "",
         "on-click": "/home/kavin/.config/waybar/scripts/bluetooth_buds.sh"
     },
+    "custom/gamepad": {
+        "format": "",
+        "on-click": "/home/kavin/.config/waybar/scripts/gamepad.sh"
+    },
+
     "custom/night": {
-        "format": "",
+        "format": "",
         "on-click": "/home/kavin/.config/waybar/scripts/night_mode.sh"
     },
 
@@ -226,5 +230,14 @@
         "format" : "",
         //"on-click": "/home/kavin/.config/waybar/scripts/launch_wlogout.sh"
 	"on-click": "wlogout -b 4 &"
-    }
+    }, 
+    "custom/brightness": {
+        "exec": "ddcutil -b 5 getvcp 10 -t | perl -nE 'if (/ C (\\d+) /) { say $1; }'",
+        "exec-if": "sleep 1", 
+        "format": "{}% {icon}",
+        "format-icons": [""],
+        "interval": "once",
+        "on-scroll-up": "ddcutil -b 5 setvcp 10 + 10",
+        "on-scroll-down": "ddcutil -b 5 setvcp 10 - 10"
+    },
 }

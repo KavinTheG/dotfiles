@@ -3,8 +3,19 @@
 	padding = { x = 10, y = 10 } 
 
 [font]
-	normal = { family = "SauceCodeProNerdFont", style = "Semibold" }
-	size = 11.5
+	size = 11.5 
+
+[font.normal]
+	family = "Fira Code"
+	style = "Medium"
+
+[font.bold]
+	family = "Fira Code"
+	style = "Bold"
+
+[font.italic]
+	family = "Fira Code"
+	style = "Italic"
 
 [cursor]
 	style = { shape = "Beam", blinking = "On"}

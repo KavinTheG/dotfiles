@@ -24,7 +24,7 @@ button {
 }
 
 button:hover {
-	background-color: rgba(0, 0, 0, 0.35);
+	background-color: rgba(0, 0, 0, 0.50);
 	background-size: 40%;
 	animation: gradient_f 10s ease-in infinite;	
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);

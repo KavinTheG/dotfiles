@@ -4,13 +4,18 @@
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/kavin/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit colors
 compinit
+colors
+
+setopt notify
+setopt share_history
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Eza
 #alias ls='eza'
@@ -19,18 +24,15 @@ SAVEHIST=1000
 #alias lsd='eza --tree' # Tree view
 
 alias ls='lsd'
-# Edit a hypr config
-hypr() {
-	vim "$HOME/.config/hypr/$1"
-}
+alias arc='arduino-cli'
 
 # Zoxide
 alias cd='z'
 
-#eval "$(oh-my-posh init zsh)"
-#eval "$(oh-my-posh init zsh --config ~/.config/.oh-my-posh/bubbles.omp.json)"
+# eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_mocha.omp.json)"
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # End of lines configured by zsh-newuser-install
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -38,3 +40,11 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # Created by `pipx` on 2024-08-07 21:32:28
 export PATH="$PATH:/home/kavin/.local/bin"
+
+# bun completions
+[ -s "/home/kavin/.bun/_bun" ] && source "/home/kavin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export EDITOR=vim
