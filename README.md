@@ -31,7 +31,7 @@ dotfiles/
 Ensure you have the following software installed:
 
   ```bash
-  sudo pacman -S stow hyprland, nvim, waybar, alacritty
+  sudo pacman -S stow hyprland nvim waybar wezterm
 ```
 
 pywal-16 must be used instead of the regular pywal. The instruction guide can be found in its github wiki page.
