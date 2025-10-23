@@ -1,0 +1,242 @@
+format = '''
+$directory$git_branch$rust$python
+$character'''
+
+palette = 'colors'
+
+[palettes.colors]
+color1 = '{{colors.primary_fixed_dim.default.hex}}'
+color2 = '{{colors.on_primary.default.hex}}'
+color3 = '{{colors.on_surface_variant.default.hex}}'
+color4 = '{{colors.surface_container.default.hex}}'
+color5 = '{{colors.on_primary.default.hex}}'
+color6 = '{{colors.surface_dim.default.hex}}'
+color7 = '{{colors.surface.default.hex}}'
+color8 = '{{colors.primary.default.hex}}'
+color9 = '{{colors.tertiary.default.hex}}'
+error = '{{colors.error.default.hex}}'
+
+# Prompt symbols 
+[character]
+success_symbol = "[🞈](color9 bold)"
+error_symbol = "[🞈](error)"
+vicmd_symbol = "[🞈](color1)"
+
+[directory]
+format = '\[[$path]($style)\]'
+style = "fg:color8"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+format = '\[[$symbol$branch]($style)\]'
+style = "fg:color9"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "fg:color3"
+
+[time]
+format = '\[[$time]($style)\]'
+style = "fg:color5"
+disabled = false
+time_format = "%R"
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+style = "fg:color8"
+symbol = '🐍 '
+pyenv_prefix = 'venv '
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color9"
+
+# All other modules keep bracketed format
+[aws]
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+style = "fg:color5"
+[bun]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[c]
+format = '\[[$symbol($version(-$name))]($style)\]'
+style = "fg:color5"
+[cpp]
+format = '\[[$symbol($version(-$name))]($style)\]'
+style = "fg:color5"
+[cmake]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+style = "fg:color3"
+[cobol]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[conda]
+format = '\[[$symbol$environment]($style)\]'
+style = "fg:color5"
+[crystal]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[daml]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[dart]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[deno]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+style = "fg:color5"
+[dotnet]
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
+style = "fg:color5"
+[elixir]
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
+style = "fg:color5"
+[elm]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[erlang]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[fennel]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[fossil_branch]
+format = '\[[$symbol$branch]($style)\]'
+style = "fg:color5"
+[gcloud]
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+style = "fg:color5"
+[golang]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[gradle]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[guix_shell]
+format = '\[[$symbol]($style)\]'
+style = "fg:color5"
+[haskell]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[haxe]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[helm]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[hg_branch]
+format = '\[[$symbol$branch]($style)\]'
+style = "fg:color5"
+[java]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[julia]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[kotlin]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+style = "fg:color5"
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+style = "fg:color5"
+[meson]
+format = '\[[$symbol$project]($style)\]'
+style = "fg:color5"
+[nim]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[nix_shell]
+format = '\[[$symbol$state( \($name\))]($style)\]'
+style = "fg:color5"
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[ocaml]
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+style = "fg:color5"
+[opa]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[openstack]
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
+style = "fg:color5"
+[os]
+format = '\[[$symbol]($style)\]'
+style = "fg:color5"
+[package]
+format = '\[[$symbol$version]($style)\]'
+style = "fg:color5"
+[perl]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[php]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[pijul_channel]
+format = '\[[$symbol$channel]($style)\]'
+style = "fg:color5"
+[pixi]
+format = '\[[$symbol$version( $environment)]($style)\]'
+style = "fg:color5"
+[pulumi]
+format = '\[[$symbol$stack]($style)\]'
+style = "fg:color5"
+[purescript]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[raku]
+format = '\[[$symbol($version-$vm_version)]($style)\]'
+style = "fg:color5"
+[red]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[ruby]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[scala]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[spack]
+format = '\[[$symbol$environment]($style)\]'
+style = "fg:color5"
+[sudo]
+format = '\[[as $symbol]($style)\]'
+style = "fg:color5"
+[swift]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
+style = "fg:color5"
+[username]
+format = '\[[$user]($style)\]'
+style = "fg:color5"
+[vagrant]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[vlang]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[zig]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"
+[solidity]
+format = '\[[$symbol($version)]($style)\]'
+style = "fg:color5"

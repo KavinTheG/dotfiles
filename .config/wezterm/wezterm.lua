@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catpuccin Latte"
 
 -- Opacity for transparency
-config.window_background_opacity = 0.75 -- notice the full name
+config.window_background_opacity = 0.7
 
 -- Disable tab bar
 config.enable_tab_bar = false
@@ -20,7 +20,7 @@ config.window_padding = {
 
 -- Font
 config.font = wezterm.font("LigaSauceCodePro Nerd Font", {
-	weight = "DemiBold", -- use DemiBold instead of Semibold
+	weight = "Bold", -- use DemiBold instead of Semibold
 	italic = false, -- true if you want italic
 })
 config.font_size = 11.5

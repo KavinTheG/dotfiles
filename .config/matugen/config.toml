@@ -1,0 +1,30 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
+set = true
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/hyprland-colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.starship]
+input_path = "~/.config/matugen/templates/starship-colors.toml"
+output_path = '~/.config/starship/starship.toml'
+
+[templates.eza]
+input_path = "~/.config/matugen/templates/eza-colors.yml"
+output_path = '~/.config/eza/theme.yml'
+
+[templates.obsidian]
+input_path = "~/.config/matugen/templates/obsidian-colors.css"
+output_path = '/home/kavin/Github/obsidian_notes/.obsidian/themes/Matugen/theme.css'
+
+[templates.btop]
+input_path = "~/.config/matugen/templates/btop.theme"
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.pywalfox]
+input_path = "~/.config/matugen/templates/pywal-colors.json"
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'

@@ -41,7 +41,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 
 # Created by `pipx` on 2024-08-07 21:32:28
-# export PATH="$PATH:/home/kavin/.local/bin"
+export PATH="$PATH:/home/kavin/.local/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # bun completions
 [ -s "/home/kavin/.bun/_bun" ] && source "/home/kavin/.bun/_bun"

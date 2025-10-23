@@ -4,7 +4,7 @@ This repository contains my personal dotfiles for managing various configuration
 
 - alacritty
 - hyprland
-- wal
+- matugen
 - waybar
 - nvim
  
@@ -34,11 +34,14 @@ Ensure you have the following software installed:
   sudo pacman -S stow hyprland nvim waybar wezterm
 ```
 
-pywal-16 must be used instead of the regular pywal. The instruction guide can be found in its github wiki page.
+I am currently using `matugen` for the palette generator. It can be installed with an AUR helper, or with cargo.  
+
+My nvim config is just the lazyvim starter with a few additional plugins 
 
 ## Usage
 
-Ensure that a dotfiles directory exists in $HOME/ and any existing files in dotfiles/ do not exist in $/HOME/.config/. It would be wise to make copies of these files instead of immediately deleting them.
+Ensure that a `dotfiles` directory exists in `$HOME/`, and that any existing files in `dotfiles/` do not already exist in `$HOME/.config/`.  
+It’s a good idea to back them up before deleting or replacing them.
 
 ```
 cd ~/dotfiles
