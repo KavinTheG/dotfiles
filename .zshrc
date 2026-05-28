@@ -1,4 +1,4 @@
-
+autoload -Uz add-zsh-hook
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
@@ -31,6 +31,9 @@ alias l.="eza -a | grep -E '^\.'"   # leave this one as is since it's piped to g
 # Zoxide
 alias cd='z'
 
+# Coding Setup
+alias setup='tmux new-session -d; tmux send-keys "nvim" C-m; tmux new-window; tmux select-window -t 0; tmux attach-session'
+
 eval "$(zoxide init zsh)"
 
 export STARSHIP_CONFIG=/home/kavin/.config/starship/starship.toml
@@ -40,6 +43,7 @@ eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 
+export PATH="/home/kavin/.deno/bin:$PATH"
 # Created by `pipx` on 2024-08-07 21:32:28
 export PATH="$PATH:/home/kavin/.local/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
