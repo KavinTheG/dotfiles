@@ -1,0 +1,277 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: {{colors.on_surface.default.hex}};
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}           
+
+.modules-left, .modules-right { 
+    margin: 4px;
+}
+
+window#waybar.termite {
+    background-color: transparent;
+}
+
+window#waybar.chromium {
+    background-color: transparent;
+    border: none;
+}
+
+/* Workspaces styling */
+#workspaces {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    border-radius: 8px;
+    border: 2px solid {{colors.secondary.default.hex}}; 
+}
+
+#workspaces button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: {{colors.on_surface.default.hex}};
+}
+
+#workspaces button:hover {
+    background: {{colors.surface_container_highest.default.hex}};
+    border: none;
+}
+
+#workspaces button.active {
+    background: {{colors.primary_container.default.hex}};
+    color: {{colors.on_primary_container.default.hex}};
+}
+
+#workspaces button.urgent {
+    background-color: {{colors.error.default.hex}};
+    color: {{colors.on_error.default.hex}};
+}
+
+/* Center modules - Application tray with unified border */
+.modules-center {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    border-radius: 8px;
+    border: 2px solid {{colors.primary.default.hex}};
+    padding: 2px 4px;
+    margin: 4px;
+}
+
+#custom-browser,
+#custom-notes,
+#custom-steam {
+    padding: 0 10px;
+    margin: 0 2px;
+    color: {{colors.on_surface.default.hex}};
+    background-color: transparent;
+    border: none;
+}
+
+/* All other individual modules with unified borders */
+#custom-earbuds,
+#custom-gamepad,
+#custom-power,
+#custom-brightness,
+#custom-night,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    margin: 0 2px;
+    color: {{colors.on_surface.default.hex}};
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    border-radius: 8px;
+    border: 2px solid {{colors.primary.default.hex}};
+}
+
+/* Fix padding for icon-only modules */
+#custom-earbuds,
+#custom-gamepad {
+    padding: 0 12px;
+}
+
+#custom-power {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+}
+
+#clock {
+    border-radius: 8px;
+    border: 2px solid {{colors.tertiary.default.hex}}; 
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#custom-power {
+    border: 2px solid {{colors.tertiary.default.hex}};
+}
+
+#battery {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#battery.charging, #battery.plugged {
+    color: {{colors.on_tertiary.default.hex}};
+    background-color: rgba({{colors.tertiary.default.r}}, {{colors.tertiary.default.g}}, {{colors.tertiary.default.b}}, 0.9);
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+        color: {{colors.on_error.default.hex}};
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+    color: {{colors.on_error.default.hex}};
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+    color: {{colors.on_error.default.hex}};
+}
+
+#power-profiles-daemon.balanced {
+    background-color: rgba({{colors.secondary.default.r}}, {{colors.secondary.default.g}}, {{colors.secondary.default.b}}, 0.9);
+    color: {{colors.on_secondary.default.hex}};
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: rgba({{colors.tertiary.default.r}}, {{colors.tertiary.default.g}}, {{colors.tertiary.default.b}}, 0.9);
+    color: {{colors.on_tertiary.default.hex}};
+}
+
+label:focus {
+    background-color: rgba({{colors.surface_container_highest.default.r}}, {{colors.surface_container_highest.default.g}}, {{colors.surface_container_highest.default.b}}, 0.9);
+}
+
+#cpu {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#memory {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#disk {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#network {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#network.disconnected {
+    background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+    color: {{colors.on_error.default.hex}};
+}
+
+#pulseaudio {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#pulseaudio.muted {
+    background-color: rgba({{colors.surface_container_low.default.r}}, {{colors.surface_container_low.default.g}}, {{colors.surface_container_low.default.b}}, 0.9);
+    color: {{colors.on_surface_variant.default.hex}};
+}
+
+#pulseaudio:hover {
+    background-color: rgba({{colors.surface_container_highest.default.r}}, {{colors.surface_container_highest.default.g}}, {{colors.surface_container_highest.default.b}}, 0.9);
+}
+
+#temperature {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#temperature.critical {
+    background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+    color: {{colors.on_error.default.hex}};
+}
+
+#custom-media {
+    background-color: rgba({{colors.tertiary_container.default.r}}, {{colors.tertiary_container.default.g}}, {{colors.tertiary_container.default.b}}, 0.9);
+    color: {{colors.on_tertiary_container.default.hex}};
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: rgba({{colors.tertiary_container.default.r}}, {{colors.tertiary_container.default.g}}, {{colors.tertiary_container.default.b}}, 0.9);
+    color: {{colors.on_tertiary_container.default.hex}};
+}
+
+#custom-media.custom-vlc {
+    background-color: rgba({{colors.secondary_container.default.r}}, {{colors.secondary_container.default.g}}, {{colors.secondary_container.default.b}}, 0.9);
+    color: {{colors.on_secondary_container.default.hex}};
+}
+
+#tray {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba({{colors.error.default.r}}, {{colors.error.default.g}}, {{colors.error.default.b}}, 0.9);
+}
+
+#idle_inhibitor {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#scratchpad {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#mpd {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}
+
+#submap {
+    background-color: rgba({{colors.surface_container.default.r}}, {{colors.surface_container.default.g}}, {{colors.surface_container.default.b}}, 0.9);
+    color: {{colors.on_surface.default.hex}};
+}

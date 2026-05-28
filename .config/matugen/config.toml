@@ -1,5 +1,5 @@
 [config.wallpaper]
-command = "swww"
+command = "awww"
 arguments = ["img", "--transition-type", "center"]
 set = true
 
@@ -24,7 +24,11 @@ output_path = '/home/kavin/Github/obsidian_notes/.obsidian/themes/Matugen/theme.
 input_path = "~/.config/matugen/templates/btop.theme"
 output_path = '~/.config/btop/themes/matugen.theme'
 
+[templates.lazygit]
+input_path = "~/.config/matugen/templates/lazygit-colors.yml"
+output_path = '~/.config/lazygit/config.yml'
+
 [templates.pywalfox]
-input_path = "~/.config/matugen/templates/pywal-colors.json"
+input_path = "~/.config/matugen/templates/pywalfox-colors.json"
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
