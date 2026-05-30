@@ -1,0 +1,14 @@
+# Font Configuration
+# We specify the weight directly in the family name
+font-family = "SauceCodePro Nerd Font Semibold"
+
+# Adds 15% extra space between lines
+adjust-cell-height = 20%
+
+# Padding (in pixels)
+window-padding-x = 10
+window-padding-y = 10
+
+# Aesthetics
+background-opacity = 0.9
+window-decoration = false
