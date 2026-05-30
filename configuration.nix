@@ -23,7 +23,7 @@
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true;
   };
 
   time.timeZone = "America/Toronto";
@@ -79,21 +79,16 @@
   programs.zsh.enable = true;
   programs.xwayland.enable = true;
 
-  # Steam settings
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
-  };
-  programs.gamemode.enable = true;
-
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    stdenv.cc.cc
+  ];
 
   security.rtkit.enable = true;
 
@@ -110,6 +105,17 @@
   };
 
   systemd.user.services.xdg-desktop-portal-gnome.enable = false;
+
+  # Steam settings
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
+  programs.gamemode.enable = true;
 
   fonts.packages = with pkgs; [
     corefonts
