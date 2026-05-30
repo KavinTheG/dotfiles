@@ -8,8 +8,11 @@
 			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows="nixpkgs-unstable";
+    };
 	};
-
 
   outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
   let
