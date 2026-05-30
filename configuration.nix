@@ -66,6 +66,10 @@
     __GL_SHADER_DISK_CACHE_PATH = "/home/kavin/.cache/nvidia/GLCache";
   };
 
+  environment.shellAliases = {
+    ls = null;
+  };
+
   services.displayManager.ly.enable = true;
   programs.niri = {
     enable = true;
@@ -91,6 +95,8 @@
     pulse.enable = true;
   };
 
+  security.rtkit.enable = true;
+
   programs.firefox.enable = true;
 
   xdg.portal = {
@@ -99,7 +105,7 @@
       pkgs.xdg-desktop-portal-gtk 
       pkgs.xdg-desktop-portal-wlr
       ];
-    config.common.default = "gtk";
+    config.common.default = "wlr";
     config.niri.default = "wlr;gtk";
   };
 
@@ -124,6 +130,8 @@
     mangohud
     protonup-ng
     xwayland-satellite
+
+    eza
   ];
 
   # Enable the OpenSSH daemon.

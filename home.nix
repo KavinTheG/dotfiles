@@ -35,12 +35,25 @@ in
 
 	    shellAliases = {
         setup = "tmux new-session -d; tmux send-keys \"nvim\" C-m; tmux new-window; tmux select-window -t 0; tmux attach-session";
+        ls = "eza --icons --group-directories-first";
+
+        ll = "eza -l --icons --git --group-directories-first"; 
+        la = "eza -a --icons --group-directories-first";       
+        lt = "eza --tree --level=2 --icons";                  
 	    };
 
 	    history.size = 10000;
 	    history.ignoreAllDups = true;
 	    history.path = "$HOME/.zsh_history";
 	    history.ignorePatterns = ["rm *" "pkill *" "cp *"];
+
+     #  initContent = lib.mkAfter ''
+     #    alias ls="eza --icons --group-directories-first"
+     #    alias ll="eza -l --icons --git --group-directories-first"
+     #    alias la="eza -a --icons --group-directories-first"
+     #    alias lt="eza --tree --level=2 --icons"
+     #  '';
+
   };
 
   programs.vim = {
