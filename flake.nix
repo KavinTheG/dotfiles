@@ -12,6 +12,13 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows="nixpkgs-unstable";
     };
+
+    # QML plugin for niri
+    qml-qiri = {
+      url = "github:imiric/qml-niri/main";
+      inputs.nixpkgs.follows="nixpkgs-unstable";
+      inputs.quickshell.follows = "quickshell";
+    };
 	};
 
   outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:

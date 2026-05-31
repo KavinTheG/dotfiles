@@ -45,6 +45,7 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       nvidia-vaapi-driver
+      libvdpau-va-gl
     ];
   };
 
@@ -109,6 +110,8 @@
   # Steam settings
   programs.steam = {
     enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
 
     extraCompatPackages = with pkgs; [
@@ -116,6 +119,7 @@
     ];
   };
   programs.gamemode.enable = true;
+  hardware.steam-hardware.enable = true;
 
   fonts.packages = with pkgs; [
     corefonts
@@ -138,6 +142,14 @@
     xwayland-satellite
 
     eza
+
+    # Wine
+    wine
+    winetricks
+    protontricks
+    vulkan-tools
+
+    SDL2
   ];
 
   # Enable the OpenSSH daemon.

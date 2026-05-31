@@ -7,7 +7,6 @@ let
     niri = "niri";
     nvim = "nvim";
     ghostty = "ghostty";
-    tmux = "tmux";
   };
 in 
 {
@@ -84,6 +83,63 @@ in
     enableZshIntegration = true;
     options = [ "--cmd cd" ];
   };
+
+  programs.tmux = {
+    enable = true;
+    # Set your existing custom config here
+    extraConfig = ''
+set -g default-terminal "tmux-256color"
+    set -ag terminal-overrides ",xterm-256color:RGB"
+    set -g pane-active-border-style fg=brightgreen
+
+    set-option -g default-terminal "tmux-256color"
+    set-option -sa terminal-overrides ',xterm-termite:RGB'
+
+    set -g base-index 1
+    setw -g pane-base-index 1
+
+    unbind C-b
+    set -g prefix C-Space
+    bind C-Space send-prefix
+
+    bind -n M-k resize-pane -U 5
+    bind -n M-j resize-pane -D 5
+    bind -n M-h resize-pane -L 5
+    bind -n M-l resize-pane -R 5
+
+    # Catppuccin and other plugin settings go here
+    set -g @catppuccin_window_status_style "rounded"
+    set -g status-right-length 100
+    set -g status-left-length 100
+    set -g status-left ""
+    set -g status-right "#{E:@catppuccin_status_application}"
+    set -agF status-right "#{E:@catppuccin_status_cpu}"
+    set -ag status-right "#{E:@catppuccin_status_session}"
+    set -ag status-right "#{E:@catppuccin_status_uptime}"
+    set -agF status-right "#{E:@catppuccin_status_battery}"
+    '';
+  
+    # Declare your plugins here
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      vim-tmux-navigator
+      {
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor 'mocha'
+          set -g @catppuccin_window_status_style "rounded"
+        '';
+      }
+      {
+        plugin = tmux-which-key; # Note: Ensure this is available in your nixpkgs version
+      }
+    ];
+  };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
   
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
@@ -91,10 +147,6 @@ in
       recursive = true;
     })
     configs;
-  # xdg.configFile."niri"    = { source = create_symlink "${dotfiles}/niri";    recursive = true; };
-  # xdg.configFile."ghostty" = { source = create_symlink "${dotfiles}/config/ghostty"; recursive = true; };
-  # xdg.configFile."nvim"    = { source = create_symlink "${dotfiles}/config/nvim";    recursive = true; };
-  # xdg.configFile."tmux"    = { source = create_symlink "${dotfiles}/config/tmux";    recursive = true; };
 
 	programs.vesktop.enable = true;
 
@@ -119,5 +171,6 @@ in
 
   ] ++ [
     pkgs-unstable.awww 
+    pkgs-unstable.quickshell
   ];
 }
